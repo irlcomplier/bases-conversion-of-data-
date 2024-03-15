@@ -19,12 +19,13 @@ for x in range(repeat):
     DhexConversion(user_denValue, hexs)
 
 def hextodecimal(user_hex, hexs):
+    resOfMultiple = 0
     initial_counter = len(user_hex) - 1
     for p in range(len(user_hex)):
         print(user_hex[p] + str(" 16^") + str(initial_counter))
         if user_hex[p] > hexs[9]:
             first_val = user_hex[p]
-            resOfMultiple = hexs.index(first_val) * 16**int(initial_counter)
+            resOfMultiple += hexs.index(first_val) * 16**int(initial_counter)
         else:
             resOfMultiple += float(user_hex[p]) * (16**initial_counter)
         initial_counter -= 1
